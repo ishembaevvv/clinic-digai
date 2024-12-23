@@ -1,0 +1,89 @@
+@import "@Mixins";
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+
+    @include SmallDesktop {
+        gap: 16px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include BigTablet {
+        gap: 16px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include Tablet {
+        gap: 16px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include Mobile {
+        margin-bottom: 20px;
+        gap: 20px;
+        grid-template-columns: 1fr;
+    }
+}
+
+.selectorCards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 9.6px;
+}
+
+.pagination {
+    margin-top: 40px;
+    display: flex;
+    gap: 9.6px;
+    justify-content: center;
+
+    @include SmallDesktop {
+        margin-top: 32px;
+    }
+
+    @include BigTablet {
+        margin-top: 32px;
+    }
+
+    @include Tablet {
+        margin-top: 32px;
+    }
+
+    @include Mobile {
+        margin-top: 32px;
+    }
+}
+
+.paginateBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    border-radius: 4.8px;
+    border: 0.6px solid var(--brand-secondary);
+    color: var(--grey-grey2);
+    padding: 1px 8px;
+    gap: 9.6px;
+    stroke: var(--brand-primary);
+    cursor: pointer;
+    &.active,
+    &:hover {
+        background: var(--brand-secondary);
+        color: var(--black-white);
+        stroke: var(--black-white);
+    }
+    @include Mobile {
+        min-width: 38px;
+        height: 38px;
+        font-size: 16px;
+        line-height: 120%;
+    }
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}

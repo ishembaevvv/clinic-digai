@@ -1,0 +1,137 @@
+@import "@Mixins";
+.wheel_of_fortune__container {
+    position: relative;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    width: 650px;
+    height: 650px;
+    @include Mobile {
+        width: calc(290px + (315 - 290) * ((100vw - 320px) / (440 - 320)));
+        height: calc(290px + (315 - 290) * ((100vw - 320px) / (440 - 320)));
+    }
+}
+
+.dot {
+    width: 120px;
+    height: 120px;
+    background-color: var(--black-white);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    @include Mobile {
+        width: calc(50px + (60 - 50) * ((100vw - 320px) / (440 - 320)));
+        height: calc(50px + (60 - 50) * ((100vw - 320px) / (440 - 320)));
+    }
+}
+
+.wheel_of_fortune__segment {
+    position: absolute;
+    left: 50%;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    transform-origin: 0 100%;
+    border: 1px solid var(--black-white);
+    background: radial-gradient(
+        39.36% 39.36% at 30.37% 70.05%,
+        #333b78 0%,
+        #010528 100%
+    );
+    box-shadow: -20px 20px 50px -25px rgba(0, 0, 0, 0.25) inset;
+}
+
+.wheel_of_fortune__arrow {
+    position: absolute;
+    top: 48%;
+    left: 100%;
+    z-index: 2;
+    margin: -12px 0 0 -50px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 25px 70px 25px 0;
+    border-color: transparent var(--brand-secondary-dark) transparent
+        transparent;
+    filter: drop-shadow(0rem 4px 4px rgba(0, 0, 0, 0.25));
+    @include Mobile {
+        border-width: 18px 40px 18px 0;
+        left: 107%;
+    }
+}
+
+.wheel_of_fortune__label {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    transform-origin: 0 100%;
+}
+
+.wheel_of_fortune__label_text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    margin-left: -20px;
+    padding-left: 60px;
+    padding-right: 30px;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+    text-align: center;
+    color: var(--black-white);
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    @include Mobile {
+        padding-left: 10px;
+    }
+    h4 {
+        @include Mobile {
+            font-size: 14.34px;
+        }
+    }
+}
+
+.threeSegmentStyle {
+    top: 129px;
+    left: 33.3%;
+    margin-left: 28px;
+    transform: rotate(-10deg) translate(-135px, 134px);
+}
+
+.fourSegmentStyle {
+    left: -35px;
+}
+
+.fiveSegmentStyle {
+    margin-left: -10px;
+    transform: rotate(-85deg);
+}
+
+.sixSegmentStyle {
+    transform: rotate(-67deg) translate(-98px, -30px) !important;
+    height: 80%;
+    left: 60px;
+    margin-left: 20px;
+}
+
+.sevenSegmentStyle {
+    left: -65px;
+    margin-left: -20px;
+    transform: rotate(-102deg) translate(30px, 8px);
+}
+
+.eightSegmentStyle {
+    margin-left: -25px;
+    transform: rotate(-100deg) translate(40px, 0px);
+    @include Mobile {
+        transform: rotate(-100deg) translate(40px, 6px);
+    }
+}

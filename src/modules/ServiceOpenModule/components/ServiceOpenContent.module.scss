@@ -1,0 +1,206 @@
+@import "@Mixins";
+
+.openedWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    margin-top: 24px;
+    @include SmallDesktop {
+        padding-top: 120px;
+        gap: 24px;
+        margin-top: 0;
+    }
+    @include BigTablet {
+        padding-top: 120px;
+        gap: 24px;
+        margin-top: 0;
+    }
+    @include Tablet {
+        padding-top: 120px;
+        gap: 24px;
+        margin-top: 0;
+    }
+    @include Mobile {
+        padding-top: 120px;
+        gap: 24px;
+        margin-top: 0;
+    }
+    .title {
+        text-align: center;
+        color: var(--brand-primary);
+        align-self: stretch;
+        margin-top: 8px;
+        @include SmallDesktop {
+            font-size: 32px;
+        }
+        @include BigTablet {
+            font-size: 32px;
+        }
+        @include Tablet {
+            font-size: 32px;
+        }
+        @include Mobile {
+            font-size: 24px;
+        }
+    }
+    .columnContainer {
+        display: flex;
+        gap: 120px;
+        flex-direction: column;
+        @include SmallDesktop {
+            gap: 80px;
+        }
+        @include BigTablet {
+            gap: 80px;
+        }
+        @include Tablet {
+            gap: 80px;
+        }
+        @include Mobile {
+            flex-direction: column;
+            gap: 60px;
+        }
+    }
+    .cardWrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 20px;
+        align-self: stretch;
+
+        &.odd {
+            flex-direction: row-reverse;
+            @include SmallDesktop {
+                flex-direction: column;
+            }
+            @include BigTablet {
+                flex-direction: column;
+            }
+            @include Tablet {
+                flex-direction: column;
+            }
+            @include Mobile {
+                flex-direction: column;
+            }
+        }
+        .textContainer {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 610px;
+            gap: 16px;
+
+            @include SmallDesktop {
+                gap: 20px;
+            }
+            @include BigTablet {
+                gap: 20px;
+            }
+            @include Tablet {
+                gap: 20px;
+                max-width: 610px;
+                flex-wrap: wrap;
+            }
+            @include Mobile {
+                gap: 20px;
+                max-width: 355px;
+                flex-wrap: wrap;
+            }
+            .more {
+                order: 3;
+                align-items: center;
+                flex-direction: row;
+                height: 52px;
+                padding: 12px 32px;
+                justify-content: flex-end;
+                margin-top: -14px;
+                display: none;
+                @include SmallDesktop {
+                    display: flex;
+                }
+                @include BigTablet {
+                    display: flex;
+                }
+                @include Tablet {
+                    display: flex;
+                }
+                @include Mobile {
+                    display: flex;
+                }
+                .iconWrapper {
+                    height: 24px;
+                    padding: 0px;
+                    justify-content: center;
+                    align-items: center;
+                    flex-shrink: 0;
+                    transition:
+                        transform 0.3s,
+                        margin 0.3s;
+                }
+                .buttonMore {
+                    vertical-align: bottom;
+                    bottom: 0;
+                    align-self: center;
+                    width: max-content;
+                    align-items: flex-end;
+                }
+            }
+        }
+        .bodyHeader,
+        .bodyText {
+            color: var(--black-black2);
+            width: 100%;
+            flex-wrap: wrap;
+            max-width: 610px;
+        }
+        .bodyHeader {
+            font-size: 38px;
+            @include SmallDesktop {
+                font-size: 22px;
+                font-weight: 700;
+                line-height: 120%;
+            }
+            @include BigTablet {
+                font-size: 22px;
+                font-weight: 700;
+                line-height: 120%;
+            }
+            @include Tablet {
+                font-size: 22px;
+                font-weight: 700;
+                line-height: 120%;
+            }
+            @include Mobile {
+                font-size: 20px;
+                line-height: 120%;
+            }
+        }
+        .bodyText {
+            @include SmallDesktop {
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 120%;
+                margin-top: 4px;
+            }
+            @include BigTablet {
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 120%;
+                margin-top: 4px;
+            }
+            @include Tablet {
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 120%;
+                margin-top: 4px;
+            }
+            @include Mobile {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 120%;
+                margin-top: -4px;
+            }
+        }
+    }
+}

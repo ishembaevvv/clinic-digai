@@ -1,0 +1,164 @@
+@import "@Mixins";
+
+.header {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 100px;
+    background-color: var(--brand-primary);
+    height: 130px;
+    align-items: center;
+    flex-shrink: 0;
+    position: fixed;
+    z-index: 50;
+    width: 100%;
+    top: 0;
+    @include SmallDesktop {
+        height: 80px;
+        padding: 0px 30px;
+    }
+
+    @include BigTablet {
+        height: 80px;
+        padding: 0px 30px;
+    }
+
+    @include Tablet {
+        height: 80px;
+        padding: 0px 30px;
+    }
+
+    .headerContent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 1240px;
+
+        .logo {
+            display: flex;
+            max-width: 220px;
+            height: 130px;
+            padding: 14px 13px 14px 11px;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            cursor: pointer;
+            @include BigTablet {
+                max-width: 130px;
+                height: 80px;
+                padding: 8.702px 7.877px 8.815px 6.735px;
+            }
+            @include SmallDesktop {
+                max-width: 130px;
+                height: 80px;
+                padding: 8.702px 7.877px 8.815px 6.735px;
+            }
+
+            @include Tablet {
+                max-width: 130px;
+                height: 80px;
+                padding: 8.702px 7.877px 8.815px 6.735px;
+            }
+
+            img {
+                display: flex;
+                max-width: 195px;
+                height: 102px;
+                @include BigTablet {
+                    max-width: 115.388px;
+                    height: 62.483px;
+                    flex-shrink: 0;
+                }
+                @include Tablet {
+                    max-width: 115.388px;
+                    height: 62.483px;
+                    flex-shrink: 0;
+                }
+            }
+        }
+        nav {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: flex-end;
+            gap: 16px;
+            @include SmallDesktop {
+                display: none;
+            }
+            @include BigTablet {
+                display: none;
+            }
+            @include BigTablet {
+                display: none;
+            }
+            @include Tablet {
+                display: none;
+            }
+        }
+        .buttons {
+            display: flex;
+            gap: 32px;
+            display: none;
+            @include BigTablet {
+                display: flex;
+            }
+            @include SmallDesktop {
+                display: flex;
+            }
+            @include Mobile {
+                display: flex;
+            }
+            @include Tablet {
+                display: flex;
+            }
+            .button {
+                justify-content: center;
+                align-items: center;
+                @include BigTablet {
+                    max-height: 45px;
+                }
+                @include SmallDesktop {
+                    max-height: 45px;
+                }
+                @include Tablet {
+                    max-height: 45px;
+                }
+                @include Mobile {
+                    display: none;
+                }
+            }
+        }
+        .burger {
+            @include SmallDesktop {
+                display: block;
+                width: 45px;
+                height: 45px;
+            }
+            @include BigTablet {
+                display: block;
+                width: 45px;
+                height: 45px;
+            }
+            @include Tablet {
+                display: block;
+                width: 45px;
+                height: 45px;
+            }
+            @include Mobile {
+                width: 34px;
+                height: 34px;
+                display: block;
+            }
+        }
+    }
+    .burgerCardWrapper {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+    }
+    .burgerCardWrapper.visible {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}

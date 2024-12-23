@@ -1,0 +1,91 @@
+.aboutWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-items: center;
+  gap: 32px;
+  margin-top: 24px;
+}
+.aboutWrapper .aboutContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+.aboutWrapper .aboutContainer .textHeader {
+  align-self: stretch;
+  color: var(--brand-primary);
+  text-align: center;
+}
+.aboutWrapper .aboutContainer .aboutContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  align-self: stretch;
+}
+.aboutWrapper .aboutContainer .aboutContent img {
+  height: 406px;
+  border-radius: 20px;
+}
+.aboutWrapper .aboutContainer .aboutContent .textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.aboutWrapper .aboutContainer .aboutContent .textContainer .textWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 610px;
+  height: auto;
+  gap: 10px;
+}
+.aboutWrapper .aboutContainer .aboutContent .textContainer .textWrapper .text {
+  color: var(--black-black2);
+}
+.aboutWrapper .aboutContainer .aboutContent .textContainer .line {
+  border: 1px solid var(--brand-primary);
+  min-width: 610px;
+}
+.aboutWrapper .aboutContainer .aboutContent .textContainer .numbers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+.aboutWrapper .aboutContainer .aboutContent .textContainer .numbers .num {
+  display: flex;
+  color: var(--brand-primary);
+  justify-content: center;
+}
+.aboutWrapper .licenseContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 38px;
+}
+.aboutWrapper .licenseContainer .textHeader {
+  align-self: stretch;
+  color: var(--brand-primary);
+  text-align: center;
+}
+.aboutWrapper .licenseContainer .licenseContent {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  align-self: stretch;
+}
+.aboutWrapper .licenseContainer .licenseContent .textWrapper {
+  display: flex;
+  width: 831px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+.aboutWrapper .licenseContainer .licenseContent .text {
+  color: var(--black-black2);
+  align-self: stretch;
+}
+.aboutWrapper .licenseContainer .licenseContent img {
+  height: 530px;
+}

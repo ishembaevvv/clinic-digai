@@ -1,0 +1,155 @@
+@import "@Mixins";
+
+.containerCardWrapper {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    overflow: hidden;
+    max-width: 1240px;
+    margin: 0 auto;
+    align-items: flex-end;
+    height: 100%;
+    @include SmallDesktop {
+        max-width: 980px;
+    }
+
+    @include BigTablet {
+        max-width: 708px;
+    }
+
+    @include Tablet {
+        max-width: 708px;
+    }
+    @include Mobile {
+        max-width: 335px;
+        align-items: center;
+    }
+
+    .containerCard {
+        display: flex;
+        padding-bottom: 40px;
+        align-items: center;
+        gap: 20px;
+        align-self: stretch;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        max-width: 100%;
+        @include SmallDesktop {
+            gap: 20px;
+        }
+        @include BigTablet {
+            gap: 16px;
+        }
+        @include Tablet {
+            gap: 0;
+        }
+        @include Mobile {
+            gap: 16px;
+            overflow-x: scroll;
+            width: auto;
+            padding-bottom: 32px;
+            height: max-content;
+        }
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        .cardItem {
+            width: 400px;
+            flex-shrink: 0;
+            scroll-snap-align: center;
+            @include SmallDesktop {
+                width: 400px;
+            }
+            @include BigTablet {
+                width: 400px;
+            }
+            @include Tablet {
+                width: 360px;
+            }
+            @include Mobile {
+                width: 280px;
+            }
+        }
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        width: 100%;
+        gap: 310px;
+        @include SmallDesktop {
+            position: static;
+            justify-content: flex-end;
+            align-items: flex-end;
+            gap: 180px;
+        }
+
+        @include BigTablet {
+            position: static;
+            justify-content: flex-end;
+            align-items: flex-end;
+            gap: 40px;
+        }
+
+        @include Tablet {
+            position: static;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 40px;
+        }
+
+        @include Mobile {
+            position: static;
+            justify-content: flex-end;
+            gap: 20px;
+            width: max-content;
+        }
+        .buttonsText {
+            display: flex;
+            width: max-content;
+            height: 50px;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            @include Mobile {
+                height: 40px;
+            }
+            .button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @include SmallDesktop {
+                    max-height: 45px;
+                    min-height: 45px;
+                }
+                @include BigTablet {
+                    max-height: 45px;
+                    min-height: 45px;
+                }
+                @include Tablet {
+                    max-height: 45px;
+                    min-height: 45px;
+                }
+                @include Mobile {
+                    padding: 0;
+                    min-width: 335px;
+                    max-height: 40px;
+                    min-height: 40px;
+                }
+            }
+        }
+        .buttonsIcon {
+            display: flex;
+            gap: 16px;
+            @include Mobile {
+                display: none;
+            }
+        }
+    }
+
+    .cardItem {
+        text-decoration: none;
+    }
+}

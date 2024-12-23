@@ -1,0 +1,31 @@
+@import "@Mixins";
+.newsWrapper {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 32px;
+    margin-top: 120px;
+    @include SmallDesktop {
+        margin-top: 80px;
+        gap: 24px;
+    }
+    @include BigTablet {
+        margin-top: 80px;
+        gap: 24px;
+    }
+    @include Tablet {
+        margin-top: 80px;
+        gap: 24px;
+    }
+    @include Mobile {
+        margin-top: 80px;
+        gap: 20px;
+    }
+    .text {
+        color: var(brand-primary);
+        text-align: center;
+        @include Mobile {
+            font-size: 22px;
+        }
+    }
+}

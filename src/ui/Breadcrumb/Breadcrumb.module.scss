@@ -1,0 +1,52 @@
+@import "@Mixins";
+
+.breadcrumbWrapper {
+    margin-top: 24px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 1240px;
+    padding-top: 130px;
+    @include Mobile {
+        display: none;
+    }
+    @include Tablet {
+        display: none;
+    }
+    @include BigTablet {
+        display: none;
+    }
+    @include SmallDesktop {
+        display: none;
+    }
+}
+
+.crumbContainer {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    cursor: default;
+    text-decoration: none;
+    .crumbContent {
+        display: flex;
+        gap: 4px;
+        align-items: center;
+    }
+}
+
+.crumb {
+    text-decoration: none;
+    color: var(--grey-grey3);
+    &:hover {
+        color: var(--black-black2);
+        cursor: pointer;
+    }
+    &.isActive {
+        color: var(--black-black2);
+    }
+}
+
+.crumbIcon {
+    margin-top: -1px;
+    margin-right: 4px;
+}

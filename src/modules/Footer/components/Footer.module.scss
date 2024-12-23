@@ -1,0 +1,121 @@
+@import "./FooterContacts/FooterContacts.module.scss";
+@import "./FooterMenu/FooterMenu.module.scss";
+@import "@Mixins";
+
+.footer {
+    background: var(--brand-primary);
+    margin-top: 130px;
+    a {
+        text-decoration: none;
+        color: var(--black-white);
+    }
+
+    .footerBlocks {
+        display: flex;
+        justify-content: center;
+        gap: 218px;
+        padding: 20px 0;
+        margin: auto;
+        @include SmallDesktop {
+            gap: 100px;
+        }
+        @include BigTablet {
+            display: block;
+            justify-content: flex-start;
+            gap: 0;
+            padding: 20px 30px;
+        }
+        @include Tablet {
+            display: block;
+            justify-content: flex-start;
+            gap: 0;
+            padding: 20px 30px;
+            margin: 0;
+        }
+    }
+    .logoContainer {
+        @include BigTablet {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 45px;
+        }
+        @include Tablet {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 45px;
+        }
+        @include Mobile {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            display: flex;
+            width: 250px;
+            height: 130px;
+            padding: 14px 13px 14px 11px;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            cursor: pointer;
+            @include BigTablet {
+                max-width: 130px;
+                height: 120px;
+                padding: 8.702px 7.877px 8.815px 6.735px;
+            }
+            @include SmallDesktop {
+                max-width: 200px;
+                height: 120px;
+                padding: 8.702px 7.877px 8.815px 6.735px;
+            }
+
+            @include Tablet {
+                max-width: 200px;
+                height: 120px;
+                padding: 8.702px 7.877px 8.815px 6.735px;
+            }
+            @include Mobile {
+                max-width: 120px;
+                height: 80px;
+                padding: 8.702px 7.877px 8.815px 6.735px;
+            }
+
+            img {
+                display: flex;
+                max-width: 195px;
+                height: 102px;
+                @include BigTablet {
+                    max-width: 115.388px;
+                    height: 62.483px;
+                    flex-shrink: 0;
+                }
+                @include Tablet {
+                    max-width: 115.388px;
+                    height: 62.483px;
+                    flex-shrink: 0;
+                }
+            }
+        }
+    }
+    .geeksPro {
+        padding: 12px 0;
+        background-color: var(--blue-blue1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .text {
+            margin-right: 8px;
+        }
+
+        a {
+            color: var(--black-black1);
+            margin-right: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+    }
+}

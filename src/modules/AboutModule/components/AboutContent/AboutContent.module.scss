@@ -1,0 +1,224 @@
+@import "@Mixins";
+
+.aboutContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    margin-top: 24px;
+
+    @include SmallDesktop {
+        padding-top: 120px;
+        margin-top: 0;
+    }
+    @include BigTablet {
+        padding-top: 120px;
+        margin-top: 0;
+    }
+    @include Tablet {
+        padding-top: 120px;
+        margin-top: 0;
+    }
+    @include Mobile {
+        padding-top: 120px;
+        margin-top: 0;
+    }
+    .textHeader {
+        align-self: stretch;
+        color: var(--brand-primary);
+        text-align: center;
+        @include Tablet {
+            font-size: 32px;
+        }
+        @include Mobile {
+            font-size: 24px;
+        }
+    }
+    .aboutContent {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        align-self: stretch;
+        @include SmallDesktop {
+            margin: auto;
+            flex-direction: column;
+        }
+        @include Tablet {
+            margin: auto;
+            flex-direction: row;
+        }
+        @include Mobile {
+            flex-wrap: wrap;
+            margin: auto;
+            height: fit-content;
+        }
+        .contentImg {
+            @include SmallDesktop {
+                margin: auto;
+            }
+            @include Tablet {
+                width: 346px;
+                height: 227px;
+                border-radius: 20px;
+            }
+            @include Mobile {
+                width: 335px;
+                border-radius: 20px;
+            }
+            img {
+                height: 406px;
+                border-radius: 20px;
+                @include Tablet {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .textContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+            @include SmallDesktop {
+                max-width: 100%;
+            }
+            h5 {
+                @include Tablet {
+                    font-size: 28px;
+                    line-height: 120%;
+                }
+            }
+            @include Tablet {
+                display: block;
+                gap: 0;
+            }
+            .textWrapper {
+                display: flex;
+                flex-direction: column;
+                max-width: 610px;
+                height: auto;
+                gap: 10px;
+                @include SmallDesktop {
+                    max-width: 1090px;
+                    flex-direction: column;
+                }
+                @include Tablet {
+                    max-width: 348px;
+                }
+                .text {
+                    color: var(--black-black2);
+                    cursor: default;
+                    @include SmallDesktop {
+                        padding: 0 20px;
+                    }
+                    @include BigTablet {
+                        padding: 0 20px;
+                    }
+                    @include Tablet {
+                        font-size: 18px;
+                        padding: 0 20px;
+                    }
+                    @include Mobile {
+                        font-size: 16px;
+                        padding: 0;
+                    }
+                }
+            }
+            .line {
+                border: 1px solid var(--brand-primary);
+                min-width: 610px;
+                @include SmallDesktop {
+                    display: none;
+                }
+                @include BigTablet {
+                    display: none;
+                }
+                @include Tablet {
+                    display: none;
+                }
+            }
+            .numbers {
+                align-self: stretch;
+            }
+        }
+        .textWrapper2 {
+            padding-top: 20px;
+            .text {
+                color: var(--black-black2);
+                cursor: default;
+                font-size: 18px;
+            }
+        }
+        .figures {
+            width: 610px;
+            display: flex;
+            padding-bottom: 69px;
+            justify-content: space-between;
+            align-items: center;
+            align-self: stretch;
+            margin-left: auto;
+            margin-top: -16px;
+            @include SmallDesktop {
+                padding: 0 40px;
+                margin-left: 0;
+                width: 100%;
+            }
+            @include Tablet {
+                padding: 0;
+                margin: 0;
+                padding-top: 20px;
+                width: 708px;
+                height: 100%;
+            }
+            @include Mobile {
+                width: 335px;
+                margin: 0;
+                padding-bottom: 70px;
+                position: relative;
+                & > *:nth-child(2) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    position: absolute;
+                    top: 90px;
+                    left: 0;
+                    right: 0;
+                }
+            }
+            .num {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                color: var(--brand-primary);
+                justify-content: center;
+                @include Mobile {
+                    font-size: 24px;
+                }
+            }
+            h5 {
+                @include Tablet {
+                    line-height: 120%;
+                }
+                @include Mobile {
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+            }
+            h2 {
+                margin: 0 auto;
+                @include Tablet {
+                    font-size: 32px;
+                    font-weight: 700;
+                    line-height: 120%;
+                }
+            }
+            .figureItem {
+                text-align: center;
+                h2,
+                h5 {
+                    color: var(--brand-primary);
+                }
+            }
+        }
+    }
+}

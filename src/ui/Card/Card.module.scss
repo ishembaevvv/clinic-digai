@@ -1,0 +1,454 @@
+@import "@Mixins";
+
+.procedureCard,
+.docCard,
+.servCard,
+.newsCard {
+    display: flex;
+    flex-direction: column;
+    background: var(--black-white);
+    align-items: center;
+    cursor: default;
+    .procedureImage,
+    .docImage,
+    .servImage,
+    .newsImage {
+        overflow: hidden;
+        border-radius: 20px;
+        img {
+            object-fit: cover;
+        }
+    }
+    .procedureText,
+    .docText,
+    .servText,
+    .newsText {
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        gap: 16px;
+        h4,
+        h5 {
+            color: var(--black-black2);
+            align-self: stretch;
+        }
+    }
+}
+.detailsButton {
+    color: var(--brand-primary);
+    display: flex;
+    align-items: center;
+    &:hover {
+        color: var(--brand-secondary-hover);
+        svg {
+            color: var(--brand-secondary-hover);
+        }
+    }
+}
+
+.icon {
+    margin-top: 6px;
+}
+
+.procedureCard {
+    max-width: 610px;
+    @include Tablet {
+        max-height: 610px;
+    }
+    @include Mobile {
+        max-width: 335px;
+    }
+    .procedureImage {
+        height: 500px;
+        flex-shrink: 0;
+        @include Tablet {
+            width: 100%;
+            max-width: 610px;
+            height: 400px;
+        }
+        @include Mobile {
+            width: 100%;
+            max-width: 335px;
+            height: 220px;
+        }
+        img {
+            width: 610px;
+            height: 500px;
+            @include Tablet {
+                width: 100%;
+                max-width: 610px;
+                height: 400px;
+            }
+            @include Mobile {
+                width: 100%;
+                max-width: 335px;
+                height: 220px;
+            }
+        }
+    }
+    .procedureTextContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .procedureText {
+        justify-content: center;
+        align-items: center;
+        padding: 16px 32px;
+        background-color: var(--brand-primary);
+        max-width: 520px;
+        margin-top: -89px;
+        @include Tablet {
+            max-width: 520px;
+            justify-content: flex-start;
+        }
+        @include Mobile {
+            max-width: 286px;
+            padding: 16px;
+            justify-content: flex-start;
+        }
+        h4,
+        h5 {
+            color: var(--black-white);
+            text-decoration: none;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 6;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-height: calc(1.4em * 6);
+        }
+        h4 {
+            @include Tablet {
+                font-size: 20px;
+            }
+            @include Mobile {
+                font-size: 20px;
+            }
+        }
+        h5 {
+            @include Tablet {
+                font-size: 18px;
+                font-weight: 600;
+                -webkit-line-clamp: 6;
+                max-height: calc(1.4em * 6);
+            }
+            @include Mobile {
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 120%;
+                -webkit-line-clamp: 10;
+                max-height: calc(1.2em * 10);
+            }
+        }
+    }
+}
+.docCard {
+    position: relative;
+    .docImage {
+        display: flex;
+        flex-direction: column;
+        gap: -50px;
+        flex-shrink: 0;
+        z-index: 1;
+        align-self: stretch;
+        margin: 0 auto;
+        img {
+            height: 400px;
+            width: 400px;
+            object-fit: cover;
+            transform-origin: 50% 25%;
+            transition: transform 900ms ease-in-out;
+            @include Tablet {
+                width: 346px;
+                height: 351px;
+            }
+            @include Mobile {
+                width: 277px;
+                height: 340px;
+            }
+            &:hover {
+                transform: scale(1.49) translateY(8%);
+                @include Tablet {
+                    transform: none;
+                }
+                @include Mobile {
+                    transform: none;
+                }
+                @include BigTablet {
+                    transform: none;
+                }
+            }
+        }
+    }
+    .docText {
+        background-color: var(--black-white);
+        z-index: 2;
+        margin-top: -50px;
+        border-radius: 20px;
+        box-shadow: 0px -1px 4px 0px rgba(0, 0, 0, 0.25) inset;
+        width: 340px;
+        height: 100px;
+        padding: 16px 0;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        @include Tablet {
+            width: 285px;
+        }
+        @include Mobile {
+            width: 235px;
+            height: 86px;
+            margin-top: -43px;
+        }
+        .docTextContainer {
+            max-width: 320px;
+        }
+        h4,
+        h5 {
+            text-align: center;
+            text-decoration: none;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-height: calc(1.4em * 2);
+            width: 290px;
+            @include Tablet {
+                width: 275px;
+            }
+            @include Mobile {
+                width: 230px;
+                font-size: 18px;
+            }
+        }
+        h4 {
+            -webkit-line-clamp: 1;
+        }
+    }
+}
+.servCard {
+    position: relative;
+    height: 370px;
+    @include Tablet {
+        height: 375px;
+    }
+    @include Mobile {
+        height: 346px;
+    }
+    .servImage {
+        height: 250px;
+        z-index: 1;
+        @include Tablet {
+            height: 217px;
+        }
+        @include Mobile {
+            height: 217px;
+        }
+        img {
+            width: 400px;
+            height: 250px;
+            flex-shrink: 0;
+            transition: transform 800ms ease-out;
+            &:hover {
+                transform: scale(1.09);
+                @include Tablet {
+                    transform: none;
+                }
+                @include Mobile {
+                    transform: none;
+                }
+                @include BigTablet {
+                    transform: none;
+                }
+            }
+            @include Tablet {
+                max-width: 346px;
+            }
+            @include Mobile {
+                max-width: 277px;
+                height: 217px;
+            }
+        }
+    }
+    .servText {
+        position: absolute;
+        bottom: -12px;
+        width: 364px;
+        height: 194px;
+        padding: 16px;
+        background-color: var(--black-white);
+        border-radius: 20px;
+        box-shadow: 0px -1px 4px 0px rgba(0, 0, 0, 0.25) inset;
+        z-index: 2;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+        @include Tablet {
+            width: 298px;
+            height: 200px;
+            bottom: 32px;
+            align-items: flex-end;
+            padding: 12px 32px 0px 32px;
+            .detailsButton {
+                width: 120px;
+            }
+        }
+        @include Mobile {
+            width: 251px;
+            height: 181px;
+            bottom: -2px;
+            align-items: center;
+            .detailsButton {
+                width: 120px;
+            }
+        }
+        .servTextContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 332px;
+            align-items: flex-start;
+            @include Tablet {
+                width: 234px;
+                justify-content: flex-start;
+            }
+            @include Mobile {
+                width: 193px;
+                justify-content: flex-start;
+                gap: 8px;
+            }
+        }
+        h4 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            @include Tablet {
+                height: 48px;
+                font-size: 20px;
+                line-height: 120%;
+            }
+            @include Mobile {
+                height: 42px;
+                font-size: 18px;
+                line-height: 120%;
+            }
+        }
+        h5 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 56px;
+            @include Tablet {
+                font-size: 18px;
+                -webkit-line-clamp: 3;
+                height: 64px;
+                line-height: 120%;
+            }
+            @include Mobile {
+                font-size: 16px;
+                -webkit-line-clamp: 3;
+                height: 56px;
+                line-height: 120%;
+            }
+        }
+    }
+}
+
+.newsCard {
+    align-items: flex-start;
+    position: relative;
+    max-width: 400px;
+    height: 605px;
+    @include Tablet {
+        width: 346px;
+    }
+    @include Mobile {
+        width: 276px;
+        height: 512px;
+    }
+    .newsImage {
+        border-radius: 20px 20px 0 0;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 1;
+        height: 340px;
+        align-self: stretch;
+        @include Mobile {
+            height: 275px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            object-fit: cover;
+            transition: transform 800ms ease-out;
+            &:hover {
+                transform: scale(1.09);
+                @include Tablet {
+                    transform: none;
+                }
+                @include Mobile {
+                    transform: none;
+                }
+                @include BigTablet {
+                    transform: none;
+                }
+            }
+        }
+    }
+    .newsText {
+        padding: 20px;
+        align-self: stretch;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 0 0 20px 20px;
+        background: var(--black-white);
+        position: relative;
+        flex-grow: 1;
+        box-shadow: 0px -1px 4px 0px rgba(0, 0, 0, 0.25) inset;
+        @include Mobile {
+            padding-bottom: 9px;
+            gap: 8px;
+            .detailsButton {
+                width: 120px;
+            }
+        }
+        .newsTextContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        h4,
+        h5 {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        h4 {
+            color: var(--brand-primary);
+            height: 68px;
+            font-weight: 500;
+        }
+        h5 {
+            -webkit-line-clamp: 3;
+            height: 84px;
+            @include Mobile {
+                font-size: 18px;
+                line-height: 120%;
+                height: 66px;
+            }
+        }
+    }
+}

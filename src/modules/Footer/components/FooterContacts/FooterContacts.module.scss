@@ -1,0 +1,73 @@
+@import "@Mixins";
+
+.fContact {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    width: 264px;
+    @include BigTablet {
+        gap: 20px;
+        max-width: 259px !important;
+    }
+    @include Tablet {
+        gap: 20px;
+        max-width: 259px !important;
+    }
+    @include Mobile {
+        display: none;
+    }
+    .fTitle {
+        color: var(--black-white);
+        cursor: default;
+
+        @include BigTablet {
+            font-size: 16px;
+        }
+        @include Tablet {
+            font-size: 16px;
+        }
+    }
+    .timetable {
+        display: flex;
+        align-items: baseline;
+        .timeText {
+            margin-left: 6px;
+            color: var(--black-white);
+            margin-bottom: 6px;
+            cursor: default;
+            @include Tablet {
+                margin-bottom: 20px;
+                font-size: 16px;
+            }
+            @include BigTablet {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    p {
+        color: var(--black-white);
+    }
+
+    .actionText {
+        display: flex;
+        align-items: center;
+        color: var(--black-white);
+        cursor: pointer;
+        gap: 6px;
+
+        @include BigTablet {
+            font-size: 16px;
+        }
+        @include Tablet {
+            font-size: 16px;
+        }
+
+        &:hover {
+            color: var(--brand-secondary);
+            .icon {
+                background-color: var(--brand-secondary);
+            }
+        }
+    }
+}

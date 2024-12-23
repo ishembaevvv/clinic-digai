@@ -1,0 +1,151 @@
+@import "@Mixins";
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background: var(--darken);
+    z-index: 100;
+    &.active {
+        overflow: hidden;
+    }
+    .burgerContainer {
+        border-radius: 20px 0px 0px 20px;
+        position: relative;
+        width: 482px;
+        height: 730px;
+        flex-shrink: 0;
+        background-color: var(--brand-primary);
+        transition: 0.3s;
+        overflow: hidden;
+        padding: 30px;
+        @include SmallDesktop {
+            width: 320px;
+            height: 454px;
+        }
+        @include BigTablet {
+            width: 320px;
+            height: 454px;
+        }
+        @include Tablet {
+            width: 320px;
+            height: 454px;
+        }
+        @include Mobile {
+            width: 253px;
+            height: 407px;
+            padding: 20px;
+            gap: 20px;
+        }
+        nav {
+            display: flex;
+            flex-direction: column;
+            height: max-content;
+            @include SmallDesktop {
+                margin-left: 5px;
+                margin-top: 10px;
+                gap: 20px;
+            }
+            @include BigTablet {
+                margin-left: 5px;
+                margin-top: 10px;
+                gap: 20px;
+            }
+            @include Tablet {
+                margin-left: 5px;
+                margin-top: 10px;
+                gap: 20px;
+            }
+            @include Mobile {
+                margin-left: 5px;
+                gap: 20px;
+                margin-top: 0;
+            }
+            .button {
+                justify-content: center;
+                align-items: center;
+                @include SmallDesktop {
+                    max-width: 162px;
+                    min-height: 52px;
+                }
+                @include BigTablet {
+                    max-width: 162px;
+                    min-height: 52px;
+                }
+                @include Tablet {
+                    max-width: 162px;
+                    min-height: 52px;
+                }
+                @include Mobile {
+                    width: 162px;
+                    max-height: 45px;
+                    min-height: 45px;
+                }
+            }
+        }
+        .logoContainer {
+            display: flex;
+            width: 260px;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 auto;
+            @include Mobile {
+                width: 213px;
+            }
+            .logoWrapper {
+                display: flex;
+                width: 130px;
+                height: 80px;
+                padding: 8.702px 7.877px 8.815px 6.735px;
+                justify-content: center;
+                align-items: center;
+                flex-shrink: 0;
+            }
+            .closeContainer {
+                display: flex;
+                width: 50px;
+                height: 50px;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                flex-shrink: 0;
+            }
+        }
+        .navlinks {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            list-style: none;
+            a {
+                color: var(--black-white);
+                text-decoration: none;
+                display: block;
+                width: 100%;
+                white-space: nowrap;
+                cursor: pointer;
+            }
+            .h6 {
+                font-size: 16px;
+                &:hover {
+                    color: var(--brand-secondary);
+                }
+                @include SmallDesktop {
+                    line-height: 140%;
+                }
+                @include BigTablet {
+                    line-height: 140%;
+                }
+                @include Tablet {
+                    line-height: 140%;
+                }
+                @include Mobile {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

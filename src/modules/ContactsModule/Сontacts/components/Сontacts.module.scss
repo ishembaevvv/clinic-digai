@@ -1,0 +1,308 @@
+@import "@Mixins";
+
+.container {
+    display: flex;
+    min-width: 400px;
+    height: 544px;
+    padding: 24px 36px;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    border-radius: 20px;
+    background: var(--brand-primary);
+    @include SmallDesktop {
+        display: inline-flex;
+        flex-direction: row;
+        padding: 0 14px;
+        gap: 10px;
+        min-width: 60px;
+        height: 350px;
+        align-items: center;
+        z-index: 2;
+    }
+    @include BigTablet {
+        display: inline-flex;
+        flex-direction: row;
+        padding: 0 14px;
+        gap: 10px;
+        min-width: 60px;
+        height: 350px;
+        align-items: center;
+        z-index: 2;
+        &.visible {
+            height: 350px;
+            opacity: 1;
+        }
+    }
+    @include Tablet {
+        display: inline-flex;
+        flex-direction: row;
+        padding: 0 14px;
+        gap: 10px;
+        min-width: 60px;
+        height: 350px;
+        align-items: center;
+        z-index: 2;
+        &.visible {
+            height: 350px;
+            opacity: 1;
+        }
+    }
+    @include Mobile {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 0;
+        width: 335px;
+        align-items: center;
+        z-index: 2;
+        transition:
+            height 0.1s ease-out,
+            opacity 0.1s ease-out,
+            border-radius 0.1s ease-out;
+        &.hidden {
+            height: 40px;
+            opacity: 1;
+            border-radius: 20px 20px 0 0;
+        }
+        &.visible {
+            border-radius: 20px;
+            height: 527px;
+            opacity: 1;
+        }
+    }
+
+    .arrow {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        @include SmallDesktop {
+            transform: rotate(90deg);
+            order: 2;
+            height: 335px;
+            width: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            svg {
+                margin: auto 0;
+            }
+
+            &.visible {
+                transform: rotate(270deg);
+            }
+        }
+        @include BigTablet {
+            transform: rotate(90deg);
+            order: 2;
+            height: 335px;
+            width: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                margin: auto 0;
+            }
+
+            &.visible {
+                transform: rotate(270deg);
+            }
+        }
+        @include Tablet {
+            transform: rotate(90deg);
+            order: 2;
+            height: 335px;
+            width: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                margin: auto 0;
+            }
+
+            &.visible {
+                transform: rotate(270deg);
+            }
+        }
+
+        @include Mobile {
+            transform: rotate(180deg);
+            order: -1;
+            width: 335px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                margin: 0 auto;
+            }
+            &.visible {
+                transform: rotate(0deg);
+                position: absolute;
+                top: -150px;
+            }
+        }
+    }
+    .rows {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        @include SmallDesktop {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-auto-rows: min-content;
+            overflow: visible;
+            max-height: none;
+            transition:
+                max-height 0.5s ease-in,
+                opacity 0.5s ease-in;
+            &.hidden {
+                max-width: 0;
+                opacity: 0;
+                transform: scaleY(0);
+            }
+            &.visible {
+                max-width: 830px;
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
+        @include BigTablet {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(300px, 1fr));
+            overflow: visible;
+            max-height: none;
+            transition:
+                max-height 0.5s ease-in,
+                opacity 0.5s ease-in;
+            &.hidden {
+                max-width: 0;
+                opacity: 0;
+                transform: scaleY(0);
+            }
+            &.visible {
+                max-width: 840px;
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
+        @include Tablet {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(300px, 1fr));
+            overflow: visible;
+            max-height: none;
+            transition:
+                max-height 0.5s ease-in,
+                opacity 0.5s ease-in;
+            &.hidden {
+                max-width: 0;
+                opacity: 0;
+                transform: scaleY(0);
+            }
+            &.visible {
+                max-width: 840px;
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
+
+        @include Mobile {
+            display: inline-flex;
+            flex-direction: column;
+            max-width: none;
+            transition:
+                height 0.5s ease-in,
+                opacity 0.5s ease-in;
+            &.hidden {
+                max-height: 0;
+                opacity: 0;
+            }
+        }
+
+        .rowItem {
+            &:nth-child(1) {
+                pointer-events: none;
+            }
+        }
+
+        .rowItem:nth-child(1),
+        .rowItem:nth-child(2),
+        .rowItem:nth-child(3) {
+            grid-column: 1;
+        }
+        .rowItem:nth-child(4) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        .rowItem:nth-child(5) {
+            grid-column: 2;
+            grid-row: 2;
+            width: 250px;
+        }
+        .rowItem:hover .info .title,
+        .rowItem:hover .info .detailRow,
+        .rowItem:hover .icons svg {
+            color: var(--brand-secondary);
+        }
+
+        .rowItem.specialItem:hover .info .title,
+        .rowItem.specialItem:hover .info .detailRow,
+        .rowItem.specialItem:hover .icons svg {
+            color: var(--special-color);
+        }
+        .rowContent {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            order: initial;
+            cursor: pointer;
+
+            @include Tablet {
+                gap: 10px;
+            }
+            @include Mobile {
+                gap: 10px;
+            }
+        }
+        .icons {
+            margin-top: 10px;
+            margin-left: 16px;
+            svg {
+                color: var(--black-white);
+            }
+        }
+        .iconContainer {
+            display: flex;
+            max-width: 60px;
+            height: 60px;
+            padding: 12.5px 15px;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--black-white);
+        }
+        .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 8px;
+            margin-left: 16px;
+
+            .title,
+            .detailRow {
+                color: var(--black-white);
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                white-space: normal;
+            }
+            .title {
+                font-weight: 500;
+            }
+        }
+    }
+}

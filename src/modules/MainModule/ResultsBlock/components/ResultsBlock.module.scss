@@ -1,0 +1,220 @@
+@import "@Mixins";
+
+.resultsWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+    margin-top: 120px;
+    gap: 32px;
+    @include SmallDesktop {
+        margin-top: 80px;
+        gap: 0;
+    }
+    @include BigTablet {
+        margin-top: 80px;
+        gap: 0;
+    }
+    @include Tablet {
+        margin-top: 80px;
+        gap: 0;
+    }
+    @include Mobile {
+        max-width: 335px;
+        margin-top: 80px;
+        gap: 0;
+    }
+    .textHeader {
+        color: var(--brand-primary);
+        @include SmallDesktop {
+            margin-bottom: 24px;
+        }
+        @include BigTablet {
+            margin-bottom: 24px;
+        }
+        @include Tablet {
+            margin-bottom: 24px;
+        }
+        @include Mobile {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+    }
+    .content {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        @include SmallDesktop {
+            flex-direction: column;
+            align-items: center;
+            order: 2;
+        }
+        @include BigTablet {
+            flex-direction: column;
+            align-items: center;
+            order: 2;
+        }
+        @include Tablet {
+            flex-direction: column;
+            align-items: center;
+            order: 2;
+        }
+        @include Mobile {
+            flex-direction: column;
+            order: 1;
+        }
+        .slider {
+            order: 2;
+            @include Tablet {
+                order: 1;
+                flex: 1;
+            }
+        }
+        .textWrapper {
+            order: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 609px;
+            height: auto;
+            gap: 10px;
+            align-items: flex-end;
+            margin: auto 0;
+            @include SmallDesktop {
+                order: 2;
+            }
+            @include BigTablet {
+                order: 2;
+            }
+            @include Tablet {
+                order: 2;
+            }
+            @include Mobile {
+                order: 2;
+                max-width: 335px;
+            }
+            .text {
+                color: var(--black-black2);
+                cursor: default;
+                @include Tablet {
+                    height: 250px;
+                    order: 2;
+                    text-align: center;
+                }
+                @include BigTablet {
+                    text-align: center;
+                    height: 250px;
+                    order: 2;
+                }
+                @include SmallDesktop {
+                    text-align: center;
+                    height: 250px;
+                    order: 2;
+                }
+                @include Mobile {
+                    text-align: left;
+                    height: auto;
+                    font-size: 16px;
+                }
+            }
+            .more {
+                order: 3;
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                height: 52px;
+                padding: 12px 32px;
+                .iconWrapper {
+                    height: 24px;
+                    padding: 0px;
+                    justify-content: center;
+                    align-items: center;
+                    flex-shrink: 0;
+                    transition:
+                        transform 0.3s,
+                        margin 0.3s;
+                }
+                .buttonMore {
+                    vertical-align: bottom;
+                    bottom: 0;
+                    align-self: center;
+                    width: max-content;
+                    align-items: flex-end;
+                }
+            }
+        }
+    }
+    .buttons {
+        display: flex;
+        gap: 16px;
+        order: 2;
+        @include BigTablet {
+            order: 1;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            .btnLeft {
+                position: relative;
+                right: 320px;
+                top: 200px;
+            }
+            .btnRight {
+                position: relative;
+                left: 320px;
+                top: 200px;
+            }
+        }
+        @include SmallDesktop {
+            order: 1;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            .btnLeft {
+                position: relative;
+                right: 320px;
+                top: 180px;
+            }
+            .btnRight {
+                position: relative;
+                left: 320px;
+                top: 180px;
+            }
+        }
+        @include Tablet {
+            order: 1;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            .btnLeft {
+                position: relative;
+                right: 280px;
+                top: 150px;
+            }
+            .btnRight {
+                position: relative;
+                left: 280px;
+                top: 150px;
+            }
+        }
+        @include Mobile {
+            order: -1;
+            height: 0;
+            padding: 0;
+            margin: 0;
+            z-index: 2;
+            .buttonIcons {
+                max-width: 40px;
+                max-height: 40px;
+            }
+            .btnLeft {
+                position: relative;
+                right: 140px;
+                top: 150px;
+            }
+            .btnRight {
+                position: relative;
+                left: 140px;
+                top: 150px;
+            }
+        }
+    }
+}

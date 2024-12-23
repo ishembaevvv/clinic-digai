@@ -1,0 +1,49 @@
+@import "@Mixins";
+
+.socialMedia {
+    width: 154px !important;
+    @include Mobile {
+        display: none;
+    }
+
+    & > div {
+        display: flex;
+    }
+
+    .header {
+        padding-bottom: 11px;
+        color: var(--black-white);
+        cursor: default;
+        @include Tablet {
+            padding-bottom: 20px;
+            font-size: 16px;
+        }
+        @include BigTablet {
+            padding-bottom: 20px;
+            font-size: 16px;
+        }
+    }
+
+    .actionText {
+        margin-right: 20px;
+        cursor: pointer;
+    }
+}
+
+.actionText {
+    display: flex;
+    align-items: center;
+    color: var(--black-white);
+    cursor: pointer;
+    svg {
+        stroke: var(--black-white);
+    }
+
+    &:hover {
+        color: var(--brand-secondary);
+
+        svg {
+            stroke: var(--brand-secondary);
+        }
+    }
+}

@@ -1,0 +1,240 @@
+@import "@Mixins";
+
+.main {
+    background-size: cover;
+    background-position: center;
+    background-color: var(--black-white1);
+    background-image: var(--background-image);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 120px;
+    height: calc(100vh - 130px);
+    margin-top: 130px;
+
+    @include SmallDesktop {
+        margin-top: 80px;
+        height: 600px;
+    }
+    @include BigTablet {
+        margin-top: 80px;
+        height: 600px;
+    }
+    @include Tablet {
+        margin-top: 80px;
+        height: 513px;
+    }
+    @include Mobile {
+        margin-top: 80px;
+        margin-bottom: 40px;
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1220px;
+        position: relative;
+        align-self: center;
+        flex-shrink: 0;
+        height: 100%;
+
+        .slogan {
+            display: flex;
+            flex-direction: column;
+            max-width: 620px;
+            height: 290px;
+            padding: 24px 32px;
+            gap: 16px;
+            border-radius: 20px;
+            background: var(--brand-matte);
+            backdrop-filter: blur(6px);
+            z-index: 1;
+            position: absolute;
+            width: 100%;
+            cursor: default;
+            top: 66%;
+            left: 26%;
+            transform: translate(-50%, -50%);
+            pointer-events: auto;
+            h1,
+            h5 {
+                color: var(--black-white);
+            }
+            .iconContainer {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 1000;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .whatsAppIcon,
+            .arrowTopIcon {
+                cursor: pointer;
+            }
+            .buttonsPresent {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 32px;
+                flex-wrap: wrap;
+                margin-top: 20px;
+                .button {
+                    height: 50px;
+                    min-width: 162px;
+                }
+            }
+        }
+    }
+
+    @include SmallDesktop() {
+        .wrapper {
+            padding: 20px;
+            height: 513px;
+            justify-content: flex-start;
+            box-sizing: border-box;
+            .slogan {
+                max-width: 708px;
+                transform: translateX(-50%);
+                padding: 14px 64px;
+                top: 72%;
+                left: 50%;
+                height: 230px;
+                .buttonsPresent {
+                    margin: 0 auto;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    .button {
+                        min-width: 263px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 52px;
+                    }
+                }
+            }
+            h1 {
+                text-align: center;
+                font-size: 32px;
+            }
+            h5 {
+                max-width: 579px;
+                text-align: center;
+            }
+        }
+    }
+
+    @include BigTablet() {
+        .wrapper {
+            padding: 20px;
+            height: 513px;
+            justify-content: flex-start;
+            box-sizing: border-box;
+            .slogan {
+                max-width: 708px;
+                padding: 14px 64px;
+                top: 72%;
+                left: 50%;
+                height: 230px;
+                .buttonsPresent {
+                    margin: 0 auto;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    .button {
+                        min-width: 263px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 52px;
+                    }
+                }
+            }
+            h1,
+            h5 {
+                text-align: center;
+            }
+        }
+    }
+
+    @include Tablet() {
+        .wrapper {
+            padding: 20px;
+            justify-content: flex-start;
+            box-sizing: border-box;
+            .slogan {
+                max-width: 708px;
+                padding: 14px 64px;
+                top: 55%;
+                left: 50%;
+                height: max-content;
+                .buttonsPresent {
+                    display: flex;
+                    justify-content: center;
+                    gap: 32px;
+                    flex-wrap: wrap;
+                    .button {
+                        min-width: 263px;
+                        max-height: 52px;
+                        min-height: 52px;
+                    }
+                }
+            }
+            h1,
+            h5 {
+                text-align: center;
+            }
+        }
+    }
+
+    @include Mobile() {
+        .wrapper {
+            padding: 20px;
+            justify-content: flex-start;
+            .slogan {
+                max-width: 335px;
+                padding: 27px 17px 26px 16px;
+                left: 50%;
+                top: 52%;
+                transform: translateX(-50%);
+                height: 312px;
+                .buttonsPresent {
+                    gap: 10px;
+                    .button {
+                        min-width: 299px;
+                        max-height: 40px;
+                        min-height: 40px;
+                    }
+                }
+            }
+            h1 {
+                font-size: 24px;
+                text-align: center;
+            }
+            h5 {
+                font-size: 16px;
+                font-weight: 400;
+                max-width: 579px;
+                text-align: center;
+            }
+        }
+    }
+}
+.wheelWrapper {
+    z-index: 1050;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+    pointer-events: none;
+}
+
+.wheelWrapper.visible {
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+    pointer-events: auto;
+}

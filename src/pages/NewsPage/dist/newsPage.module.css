@@ -1,0 +1,17 @@
+.newsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  gap: 40px;
+  margin-top: 24px;
+}
+.newsWrapper .title {
+  text-align: center;
+  color: var(--brand-primary);
+}
+.newsWrapper .content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}

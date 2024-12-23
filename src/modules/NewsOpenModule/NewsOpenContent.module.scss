@@ -1,0 +1,152 @@
+@import "@Mixins";
+
+.openingsWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    @include SmallDesktop {
+        padding-top: 120px;
+        gap: 24px;
+        margin-top: 0;
+    }
+    @include BigTablet {
+        padding-top: 120px;
+        gap: 24px;
+        margin-top: 0;
+    }
+    @include Tablet {
+        padding-top: 120px;
+        max-width: 708px;
+        gap: 24px;
+        margin-top: 0;
+    }
+    @include Mobile {
+        padding-top: 120px;
+        gap: 20px;
+        margin-top: 0;
+        margin-bottom: -20px;
+    }
+
+    .title {
+        color: var(--brand-primary);
+        text-align: center;
+        @include SmallDesktop {
+            font-size: 32px;
+        }
+        @include BigTablet {
+            font-size: 32px;
+        }
+        @include Tablet {
+            font-size: 32px;
+        }
+        @include Mobile {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+    }
+
+    .textWrapper {
+        display: flex;
+        width: 100%;
+        max-width: 1022px;
+        flex-direction: column;
+        gap: 24px;
+        margin: 0 auto;
+        @include SmallDesktop {
+            order: 2;
+            padding: 0 38px;
+        }
+        @include BigTablet {
+            order: 2;
+            padding: 0 38px;
+        }
+        @include Tablet {
+            max-width: 708px;
+            order: 2;
+            padding: 0 38px;
+        }
+        @include Mobile {
+            order: 2;
+            max-width: 335px;
+            padding: 0px;
+        }
+        .body {
+            color: var(--black-black2);
+            width: 100%;
+            flex-wrap: wrap;
+            @include SmallDesktop {
+                font-size: 18px;
+            }
+            @include BigTablet {
+                font-size: 18px;
+            }
+            @include Tablet {
+                font-size: 18px;
+            }
+            @include Mobile {
+                font-size: 16px;
+            }
+        }
+    }
+
+    .containerImages {
+        margin-top: 24px;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        order: 1;
+        width: 1240px;
+
+        @include SmallDesktop {
+            margin-top: 0;
+            max-width: 708px;
+        }
+        @include BigTablet {
+            margin-top: 0;
+            max-width: 708px;
+        }
+        @include Tablet {
+            margin-top: 0;
+            max-width: 708px;
+        }
+        @include Mobile {
+            margin-top: 0;
+            max-width: 335px;
+        }
+
+        .image {
+            width: 100%;
+            max-width: 609px;
+            height: 420px;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include SmallDesktop {
+                max-width: 708px;
+            }
+
+            @include BigTablet {
+                max-width: 708px;
+            }
+
+            @include Tablet {
+                max-width: 708px;
+            }
+
+            @include Mobile {
+                max-width: 335px;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

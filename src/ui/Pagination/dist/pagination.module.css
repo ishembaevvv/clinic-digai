@@ -1,0 +1,55 @@
+.content {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.selectorCards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9.6px;
+}
+
+.pagination {
+  margin-top: 40px;
+  display: flex;
+  gap: 9.6px;
+  justify-content: center;
+}
+
+.paginateBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 48px;
+  border-radius: 4.8px;
+<<<<<<< HEAD
+  border: 0.6px solid var(--brand-secondary);
+  color: var(--grey-grey2);
+  padding: 1px 8px;
+  gap: 9.6px;
+  stroke: var(--brand-primary);
+  cursor: pointer;
+}
+.paginateBtn.active, .paginateBtn:hover {
+  background: var(--brand-secondary);
+  color: var(--black-white);
+  stroke: var(--black-white);
+=======
+  border: 0.6px solid #63aaca;
+  color: #4f4f4f;
+  padding: 1px 8px;
+  gap: 9.6px;
+  cursor: pointer;
+}
+.paginateBtn.active, .paginateBtn:hover {
+  background: #63aaca;
+  color: #ffffff;
+>>>>>>> 4b8eab4 (changes fixed from qa)
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

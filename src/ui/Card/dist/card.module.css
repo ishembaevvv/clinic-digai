@@ -1,0 +1,302 @@
+.procedureCard,
+.docCard,
+.servCard,
+.newsCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--black-white);
+  align-items: center;
+  cursor: default;
+}
+.procedureCard .procedureImage,
+.procedureCard .docImage,
+.procedureCard .servImage,
+.procedureCard .newsImage,
+.docCard .procedureImage,
+.docCard .docImage,
+.docCard .servImage,
+.docCard .newsImage,
+.servCard .procedureImage,
+.servCard .docImage,
+.servCard .servImage,
+.servCard .newsImage,
+.newsCard .procedureImage,
+.newsCard .docImage,
+.newsCard .servImage,
+.newsCard .newsImage {
+  overflow: hidden;
+  border-radius: 20px;
+}
+.procedureCard .procedureImage img,
+.procedureCard .docImage img,
+.procedureCard .servImage img,
+.procedureCard .newsImage img,
+.docCard .procedureImage img,
+.docCard .docImage img,
+.docCard .servImage img,
+.docCard .newsImage img,
+.servCard .procedureImage img,
+.servCard .docImage img,
+.servCard .servImage img,
+.servCard .newsImage img,
+.newsCard .procedureImage img,
+.newsCard .docImage img,
+.newsCard .servImage img,
+.newsCard .newsImage img {
+  object-fit: cover;
+}
+.procedureCard .procedureText,
+.procedureCard .docText,
+.procedureCard .servText,
+.procedureCard .newsText,
+.docCard .procedureText,
+.docCard .docText,
+.docCard .servText,
+.docCard .newsText,
+.servCard .procedureText,
+.servCard .docText,
+.servCard .servText,
+.servCard .newsText,
+.newsCard .procedureText,
+.newsCard .docText,
+.newsCard .servText,
+.newsCard .newsText {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  gap: 16px;
+}
+.procedureCard .procedureText h4,
+.procedureCard .procedureText h5,
+.procedureCard .docText h4,
+.procedureCard .docText h5,
+.procedureCard .servText h4,
+.procedureCard .servText h5,
+.procedureCard .newsText h4,
+.procedureCard .newsText h5,
+.docCard .procedureText h4,
+.docCard .procedureText h5,
+.docCard .docText h4,
+.docCard .docText h5,
+.docCard .servText h4,
+.docCard .servText h5,
+.docCard .newsText h4,
+.docCard .newsText h5,
+.servCard .procedureText h4,
+.servCard .procedureText h5,
+.servCard .docText h4,
+.servCard .docText h5,
+.servCard .servText h4,
+.servCard .servText h5,
+.servCard .newsText h4,
+.servCard .newsText h5,
+.newsCard .procedureText h4,
+.newsCard .procedureText h5,
+.newsCard .docText h4,
+.newsCard .docText h5,
+.newsCard .servText h4,
+.newsCard .servText h5,
+.newsCard .newsText h4,
+.newsCard .newsText h5 {
+  color: var(--black-black2);
+  align-self: stretch;
+}
+.procedureCard .detailsButton,
+.docCard .detailsButton,
+.servCard .detailsButton,
+.newsCard .detailsButton {
+  color: var(--black-black2);
+}
+.procedureCard .icon,
+.docCard .icon,
+.servCard .icon,
+.newsCard .icon {
+  margin-top: 6px;
+}
+
+.procedureCard {
+  max-width: 610px;
+}
+.procedureCard .procedureImage {
+  height: 500px;
+  flex-shrink: 0;
+}
+.procedureCard .procedureImage img {
+  width: 610px;
+  height: 500px;
+}
+.procedureCard .procedureTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.procedureCard .procedureText {
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+  background-color: var(--brand-primary);
+  max-width: 520px;
+  margin-top: -89px;
+}
+.procedureCard .procedureText h4,
+.procedureCard .procedureText h5 {
+  color: var(--black-white);
+}
+
+.docCard {
+  position: relative;
+}
+.docCard .docImage {
+  display: flex;
+  flex-direction: column;
+  gap: -50px;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.docCard .docImage img {
+  height: 400px;
+  width: 400px;
+  transform-origin: 50% 25%;
+  transition: transform 1.4s cubic-bezier(0.01, 0, 0.2, 1);
+}
+.docCard .docImage img:hover {
+  animation: zoomIn 800ms ease-out forwards, scrollDown 800ms ease-out forwards;
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: scale(1.49) translateY(0.1);
+  }
+}
+@keyframes scrollDown {
+  0% {
+    transform: scale(1.49) translateY(0.2);
+  }
+  100% {
+    transform: scale(1.49) translateY(8%);
+  }
+}
+.docCard .docText {
+  background-color: var(--black-white);
+  z-index: 2;
+  margin-top: -50px;
+  border-radius: 20px;
+  box-shadow: 0px -1px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  min-width: 340px;
+  height: 100px;
+  padding: 16px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.docCard .docText h4,
+.docCard .docText h5 {
+  text-align: center;
+  text-decoration: none;
+}
+
+.servCard {
+  position: relative;
+  height: 370px;
+  margin-bottom: 10px;
+}
+.servCard .servImage {
+  height: 250px;
+  z-index: 1;
+}
+.servCard .servImage img {
+  min-width: 400px;
+  height: 250px;
+  flex-shrink: 0;
+  transition: transform 800ms ease-out;
+}
+.servCard .servImage img:hover {
+  transform: scale(1.09);
+}
+.servCard .servText {
+  position: absolute;
+  bottom: -12px;
+  max-width: 364px;
+  height: 194px;
+  padding: 16px;
+  background-color: var(--black-white);
+  border-radius: 20px;
+  box-shadow: 0px -1px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  z-index: 2;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+.servCard .servText .servTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 332px;
+  align-items: flex-start;
+}
+.servCard .servText h5 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 56px;
+}
+
+.newsCard {
+  align-items: flex-start;
+  position: relative;
+  max-width: 400px;
+  height: 605px;
+}
+.newsCard .newsImage {
+  border-radius: 20px 20px 0 0;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  height: 340px;
+  align-self: stretch;
+}
+.newsCard .newsImage img {
+  height: 340px;
+  align-self: stretch;
+  transition: transform 800ms ease-out;
+}
+.newsCard .newsImage img:hover {
+  transform: scale(1.09);
+}
+.newsCard .newsText {
+  padding: 20px;
+  align-self: stretch;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 0 0 20px 20px;
+  background: var(--black-white);
+  position: relative;
+  flex-grow: 1;
+  box-shadow: 0px -1px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+.newsCard .newsText .newsTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.newsCard .newsText h4,
+.newsCard .newsText h5 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.newsCard .newsText h4 {
+  height: 68px;
+}
+.newsCard .newsText h5 {
+  -webkit-line-clamp: 3;
+  height: 84px;
+}

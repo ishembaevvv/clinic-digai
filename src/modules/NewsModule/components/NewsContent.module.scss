@@ -1,0 +1,57 @@
+@import "@Mixins";
+
+.newsWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    gap: 40px;
+    margin-top: 24px;
+    @include SmallDesktop {
+        margin-top: 110px;
+    }
+    @include BigTablet {
+        margin-top: 110px;
+    }
+    @include Tablet {
+        margin-top: 110px;
+    }
+    @include Mobile {
+        margin-top: 110px;
+    }
+
+    .title {
+        text-align: center;
+        color: var(--brand-primary);
+        @include SmallDesktop {
+            font-size: 32px;
+        }
+        @include BigTablet {
+            font-size: 32px;
+        }
+        @include Tablet {
+            font-size: 32px;
+        }
+        @include Mobile {
+            font-size: 24px;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        @include SmallDesktop {
+            gap: 24px;
+        }
+        @include BigTablet {
+            gap: 24px;
+        }
+        @include Tablet {
+            gap: 24px;
+        }
+        @include Mobile {
+            gap: 24px;
+        }
+    }
+}

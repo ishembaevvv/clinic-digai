@@ -1,0 +1,80 @@
+@import "@Mixins";
+
+.footerItem {
+    max-width: 800px;
+    display: flex;
+    gap: 130px;
+    justify-content: flex-end;
+    @include SmallDesktop {
+        gap: 80px;
+    }
+    @include BigTablet {
+        display: flex;
+        margin: auto;
+        width: 708px;
+        gap: 80px;
+        justify-content: flex-start;
+    }
+    @include Tablet {
+        display: flex;
+        width: 708px;
+        gap: 45px;
+        justify-content: flex-start;
+    }
+    @include Mobile {
+        display: flex;
+        gap: 0;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fPrime {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+        width: 116px;
+        @include SmallDesktop {
+            gap: 20px;
+            width: 114px;
+        }
+        @include Tablet {
+            gap: 20px;
+            width: 114px;
+        }
+        @include Mobile {
+            gap: 24px;
+            align-items: center;
+        }
+        .h6Main {
+            @include Mobile {
+                display: none;
+            }
+        }
+        .h6Text {
+            @include BigTablet {
+                font-size: 16px;
+            }
+            @include Tablet {
+                font-size: 16px;
+            }
+        }
+
+        h6 {
+            cursor: pointer;
+            @include BigTablet {
+                font-size: 16px;
+            }
+            @include Tablet {
+                font-size: 16px;
+            }
+            @include Mobile {
+                font-size: 14px;
+                line-height: 120%;
+            }
+            &:hover {
+                color: var(--brand-secondary);
+            }
+        }
+    }
+}

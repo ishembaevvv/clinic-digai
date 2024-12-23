@@ -1,0 +1,24 @@
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  gap: 40px;
+  white-space: nowrap;
+}
+.info a {
+  text-decoration: none;
+}
+.info .infoItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--black-white);
+  cursor: default;
+}
+.info .infoItem:hover {
+  color: var(--brand-secondary);
+}
+.info .infoItem:hover svg {
+  color: var(--brand-secondary);
+}

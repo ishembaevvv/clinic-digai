@@ -1,0 +1,34 @@
+@import "@Mixins";
+.info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 24px;
+    gap: 40px;
+    white-space: nowrap;
+    a {
+        text-decoration: none;
+    }
+    .infoItem {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--black-white);
+        cursor: pointer;
+        &:hover {
+            color: var(--brand-secondary);
+            svg {
+                color: var(--brand-secondary);
+            }
+        }
+    }
+    @include Mobile {
+        display: none;
+    }
+    @include Tablet {
+        display: none;
+    }
+    @include BigTablet {
+        display: none;
+    }
+}

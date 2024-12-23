@@ -1,0 +1,140 @@
+@import "@Mixins";
+
+.licenseContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 38px;
+    margin-top: 120px;
+    @include SmallDesktop {
+        gap: 24px;
+        margin-top: 80px;
+    }
+    @include BigTablet {
+        gap: 24px;
+        margin-top: 80px;
+    }
+    @include Tablet {
+        gap: 24px;
+        margin-top: 80px;
+    }
+    @include Mobile {
+        gap: 24px;
+        margin-top: 60px;
+    }
+    .textHeader {
+        align-self: stretch;
+        color: var(--brand-primary);
+        text-align: center;
+        @include Tablet {
+            font-size: 28px;
+        }
+        @include Mobile {
+            font-size: 22px;
+        }
+    }
+    .licenseContent {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        align-self: stretch;
+        @include SmallDesktop {
+            margin: auto;
+            flex-wrap: wrap-reverse;
+            max-width: 1090px;
+        }
+        @include Tablet {
+            flex-wrap: wrap-reverse;
+            justify-content: center;
+        }
+        @include BigTablet {
+            flex-wrap: wrap-reverse;
+            justify-content: center;
+        }
+        .textWrapper {
+            display: flex;
+            max-width: 831px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 32px;
+            @include SmallDesktop {
+                width: 100%;
+                padding: 0 20px;
+                gap: auto;
+                max-width: 1200px;
+            }
+            @include Mobile {
+                padding: 0;
+            }
+            .text {
+                @include Tablet {
+                    font-size: 20px;
+                }
+            }
+            h3 {
+                width: 100%;
+                flex-wrap: wrap;
+                @include Tablet {
+                    font-size: 22px;
+                }
+            }
+            @include BigTablet {
+                gap: 16px;
+                max-width: 1024px;
+                margin: 0 auto;
+            }
+            @include Tablet {
+                width: 100%;
+                max-width: 708px;
+                gap: 16px;
+            }
+        }
+        .textBold {
+            @include Mobile {
+                font-size: 20px;
+            }
+        }
+        .text,
+        .textCenter {
+            color: var(black-black2);
+            align-self: stretch;
+            cursor: default;
+
+            @include Tablet {
+                font-size: 22px;
+            }
+            @include Mobile {
+                font-size: 18px;
+            }
+        }
+        .textCenter {
+            padding: 10px 0;
+        }
+        @include BigTablet {
+        }
+        .imgBlock {
+            width: 340px;
+            height: 530px;
+            @include SmallDesktop {
+                margin: auto;
+            }
+            @include Tablet {
+                width: 527px;
+                height: 718px;
+            }
+            @include BigTablet {
+                width: 527px;
+                height: 718px;
+            }
+            @include Mobile {
+                width: 335px;
+                height: 457px;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                cursor: default;
+            }
+        }
+    }
+}
